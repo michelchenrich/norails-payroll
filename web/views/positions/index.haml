@@ -1,0 +1,16 @@
+%a{href: '/positions/new'} New
+%table
+  %thead
+    %tr
+      %th Name
+      %th Description
+      %th Actions
+  %tbody
+    - positions.each do |position|
+      %tr
+        %td= position.name
+        %td= position.description
+        %td
+          %a{href: "/positions/#{position.id}"} Show
+          %a{href: "/positions/#{position.id}/edit"} Edit
+          %a{href: "/positions/#{position.id}/delete"} Delete
