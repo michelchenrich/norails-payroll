@@ -3,6 +3,14 @@ class Server < Sinatra::Application
     haml :index
   end
 
+  get '/employees' do
+    haml :'employees/index', locals: { employees: EmployeeRecord.all }
+  end
+
+  get '/employees/:id' do
+    haml :'employees/show', locals: { employee: EmployeeRecord.find(params[:id]) }
+  end
+
   get '/positions' do
     haml :'positions/index', locals: { positions: PositionRecord.all }
   end
