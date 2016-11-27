@@ -1,12 +1,15 @@
 - if position.errors.any?
   %p
+    %strong Please correct the following errors:
     %ul
       - position.errors.full_messages.each do |message|
         %li= message
-        
+
 %form{action: action, method: 'post'}
-  %label Name
-  %input{type: 'text', name: 'name', value: position.name}
-  %label Description
-  %input{type: 'text', name: 'description', value: position.description}
-  %input{type: 'submit', value: 'Save'}
+  .form-group
+    %label Name
+    %input{type: 'text', name: 'name', value: position.name, class: 'form-control'}
+  .form-group
+    %label Description
+    %input{type: 'text', name: 'description', value: position.description, class: 'form-control'}
+  %button{type: 'submit', class: 'btn btn-primary'} Save

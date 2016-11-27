@@ -2,6 +2,20 @@
 %html
   %head
     %title Payroll
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1"}
+    %link{rel:"stylesheet", href:"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"}
   %body
+    %nav.navbar.navbar-default
+      .container 
+        .navbar-header
+          %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a{href: '/', class: 'navbar-brand'} Home 
+        .collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            = haml :'navigation_links'
     .container
       = yield  
